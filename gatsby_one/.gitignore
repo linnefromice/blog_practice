@@ -67,3 +67,7 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# original blog files
+/content/blog
+!/content/blog/samples-included-in-template
