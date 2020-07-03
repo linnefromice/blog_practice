@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
+import indexStyles from "./index.module.css"
 /*
 import styled from "styled-components"
 const GridContainer = styled.div`
@@ -22,6 +23,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+      <div className={indexStyles.gridContainer}>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -48,6 +50,7 @@ const BlogIndex = ({ data, location }) => {
           </article>
         )
       })}
+      </div>
     </Layout>
   )
 }
