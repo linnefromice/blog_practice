@@ -6,6 +6,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
+/*
+import styled from "styled-components"
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`
+*/
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
