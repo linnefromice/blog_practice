@@ -3,6 +3,17 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 
+import styled from "styled-components"
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  padding: 0 ${rhythm(3 / 4)};
+`
+const Drawer = styled.div`
+  background-color: #DDFFDD;
+  height: 100vh;
+`
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
@@ -48,6 +59,26 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
+    <GridContainer>
+      <div>
+        <header>{header}</header>
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+      </div>
+      <Drawer>
+        
+      </Drawer>
+    </GridContainer>
+  )
+}
+
+export default Layout
+
+/*
     <div
       style={{
         marginLeft: `auto`,
@@ -66,7 +97,4 @@ const Layout = ({ location, title, children }) => {
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
     </div>
-  )
-}
-
-export default Layout
+*/

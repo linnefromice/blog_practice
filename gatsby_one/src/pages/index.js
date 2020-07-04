@@ -12,6 +12,28 @@ const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 `
+const ChipArea = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+const Chip = styled.div`
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  padding: 0 0.25rem;
+  margin: 0 0.25rem;
+`
+
+const TagChips = ({tags}) => (
+  <ChipArea>
+    {tags.map((tag) => {
+      return(
+        <Chip>
+          <small>{tag}</small>
+        </Chip>
+      )
+    })}
+  </ChipArea>
+)
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -36,7 +58,10 @@ const BlogIndex = ({ data, location }) => {
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date}</small>{` `}<small>{`[${node.frontmatter.tags}]`}</small>
+                <div>
+                  <small>{node.frontmatter.date}</small>
+                </div>
+                <TagChips tags={node.frontmatter.tags}/>
               </header>
               <section>
                 <p
