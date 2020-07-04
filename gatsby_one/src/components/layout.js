@@ -14,50 +14,49 @@ const Drawer = styled.div`
   height: 100vh;
 `
 
+const RootHeader = ({title}) => (
+  <h1
+    style={{
+      ...scale(1.5),
+      marginBottom: rhythm(1.5),
+      marginTop: 0,
+    }}
+  >
+    <Link
+      style={{
+        boxShadow: `none`,
+        color: `inherit`,
+      }}
+      to={`/`}
+    >
+      {title}
+    </Link>
+  </h1>
+)
+
+const CommonHeader = ({title}) => (
+  <h3
+    style={{
+      fontFamily: `Montserrat, sans-serif`,
+      marginTop: 0,
+    }}
+  >
+    <Link
+      style={{
+        boxShadow: `none`,
+        color: `inherit`,
+      }}
+      to={`/`}
+    >
+      {title}
+    </Link>
+  </h3>
+)
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  let header
+  const header = (location.pathname === rootPath) ? <RootHeader title={title} /> : <CommonHeader title={title} />
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    )
-  }
   return (
     <GridContainer>
       <div>
