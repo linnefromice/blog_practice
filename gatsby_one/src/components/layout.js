@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import styled from "styled-components"
 
 const RootContainer = styled.div`
@@ -25,7 +24,6 @@ const LogoLetter = styled.span`
   font-style: italic;
   text-align: center;
 `
-
 const GlobalHeader = styled.div`
   background-color: #8BFFAA;
   border-radius: 5px;
@@ -33,26 +31,24 @@ const GlobalHeader = styled.div`
   align-items: center;
   justify-content: center;
 `
-
 const GlobalDrawer = styled.div`
   background-color: #8BFFAA;
   border-radius: 5px;
   display: flex;
 `
-
 const ContentArea = styled.div`
   overflow-y: scroll;
 `
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
+  const rootPath = `${__PATH_PREFIX__}/` // "/"
+  const logoLetter = (location.pathname === rootPath) ? <LogoLetter>T</LogoLetter>
+    : <Link to={rootPath}><LogoLetter>T</LogoLetter></Link>
 
   return (
     <RootContainer>
       <GlobalLogo>
-        <Link to={`/`}>
-          <LogoLetter>T</LogoLetter>
-        </Link>
+        {logoLetter}
       </GlobalLogo>
       <GlobalHeader>
         <h3>{title}</h3>
