@@ -1,3 +1,12 @@
+# gatsby_two
+
+## Commands
+
+- gatsby new gatsby_two https://github.com/gatsbyjs/gatsby-starter-blog
+- yarn add @material-ui/core
+- yarn add gatsby-plugin-material-ui
+
+# AUTO-GENERATED-CONTENT:START (STARTER)
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
