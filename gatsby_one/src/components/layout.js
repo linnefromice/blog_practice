@@ -22,7 +22,6 @@ const LogoLetter = styled.span`
   font-size: 4em;
   color: #8BFFAA;
   font-weight: bold;
-  font-style: italic;
   text-align: center;
 `
 const GlobalHeader = styled.div`

@@ -37,7 +37,14 @@ const TagChips = ({tags}) => (
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const allPosts = data.allMarkdownRemark.edges
+  const posts = (location.state.tag)
+    ? allPosts.filter((element) => {
+      return element.node.frontmatter.tags.includes(location.state.tag)
+    })
+    : allPosts
+
+
 
   return (
     <Layout location={location} title={siteTitle}>
