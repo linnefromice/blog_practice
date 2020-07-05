@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import Sidebar from "./sidebar"
 
 const RootContainer = styled.div`
   display: grid;
@@ -53,7 +54,9 @@ const Layout = ({ location, title, children }) => {
       <GlobalHeader>
         <h3>{title}</h3>
       </GlobalHeader>
-      <GlobalDrawer>TODO</GlobalDrawer>
+      <GlobalDrawer>
+        <Sidebar/>
+      </GlobalDrawer>
       <ContentArea>{children}</ContentArea>
     </RootContainer>
   )
