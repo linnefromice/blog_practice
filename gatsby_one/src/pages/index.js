@@ -44,8 +44,6 @@ const BlogIndex = ({ data, location }) => {
     })
     : allPosts
 
-
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />

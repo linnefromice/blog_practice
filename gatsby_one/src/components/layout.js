@@ -38,6 +38,7 @@ const GlobalDrawer = styled.div`
 `
 const ContentArea = styled.div`
   overflow-y: scroll;
+  margin: 0 10px;
 `
 
 const Layout = ({ location, title, children }) => {

@@ -9,7 +9,7 @@ const Container = styled.div`
   flex-direction: column;
 `
 const TitleContext = styled.span`
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
 `
 const Chip = styled.div`
@@ -34,6 +34,13 @@ const Sidebar = () => {
   const group = data.allMarkdownRemark.group
   return (
     <Container>
+      <TitleContext>Menu</TitleContext>
+      <Link
+        style={{ boxShadow: `none` }}
+        to={`/about_me`}
+      >
+        <span>About Me</span>
+      </Link>
       <TitleContext>Tags</TitleContext>
       <Link
         style={{ boxShadow: `none` }}
