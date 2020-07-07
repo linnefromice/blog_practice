@@ -3,20 +3,19 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-  align-content: flex-start;
-  flex-direction: column;
+  width: 100%
 `
-const TitleContext = styled.span`
+const TitleContext = styled.div`
   font-size: 1em;
   font-weight: bold;
+  margin: 0 5%;
 `
 const Chip = styled.div`
   border-radius: 25px;
   background-color: #b3ffb7;
-  padding: 0.1rem 0.1rem;
-  margin: 0.1rem 0.1rem;
+  padding: 0.1rem 0;
+  margin: 0.5rem 5%;
+  text-align: center;
 `
 
 const Sidebar = () => {
@@ -34,31 +33,35 @@ const Sidebar = () => {
   const group = data.allMarkdownRemark.group
   return (
     <Container>
-      <TitleContext>Menu</TitleContext>
-      <Link
-        style={{ boxShadow: `none` }}
-        to={`/about_me`}
-      >
-        <span>About Me</span>
-      </Link>
-      <TitleContext>Tags</TitleContext>
-      <Link
-        style={{ boxShadow: `none` }}
-        to={`/`}
-      >
-        <span>ALL</span>
-      </Link>
-      {group.map((node) => {
-        return (
-          <Link
-            style={{ boxShadow: `none` }}
-            to={`/`}
-            state={{ tag: `${node.tag}`}}
-          >
-            <Chip>{node.tag}</Chip>
-          </Link>
-        )
-      })}
+      <div>
+        <TitleContext>Menu</TitleContext>
+        <Link
+          style={{ boxShadow: `none`, textAlign: `center` }}
+          to={`/about_me`}
+        >
+          <div>About Me</div>
+        </Link>
+      </div>
+      <div>
+        <TitleContext>Tags</TitleContext>
+        <Link
+          style={{ boxShadow: `none`, textAlign: `center` }}
+          to={`/`}
+        >
+          <div>ALL</div>
+        </Link>
+        {group.map((node) => {
+          return (
+            <Link
+              style={{ boxShadow: `none` }}
+              to={`/`}
+              state={{ tag: `${node.tag}`}}
+            >
+              <Chip>{node.tag}</Chip>
+            </Link>
+          )
+        })}
+      </div>
     </Container>
   )
 }

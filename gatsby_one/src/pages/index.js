@@ -22,6 +22,8 @@ const Chip = styled.div`
   padding: 0 0.25rem;
   margin: 0 0.25rem;
 `
+const ArticleContainer = styled.article`
+`
 
 const TagChips = ({tags}) => (
   <ChipArea>
@@ -38,7 +40,7 @@ const TagChips = ({tags}) => (
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const allPosts = data.allMarkdownRemark.edges
-  const posts = (location.state.tag)
+  const posts = (location.state && location.state.tag)
     ? allPosts.filter((element) => {
       return element.node.frontmatter.tags.includes(location.state.tag)
     })
@@ -52,7 +54,7 @@ const BlogIndex = ({ data, location }) => {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <article key={node.fields.slug}>
+            <ArticleContainer key={node.fields.slug}>
               <header>
                 <h3
                   style={{
@@ -75,7 +77,7 @@ const BlogIndex = ({ data, location }) => {
                   }}
                 />
               </section>
-            </article>
+            </ArticleContainer>
           )
         })}
       </GridContainer>

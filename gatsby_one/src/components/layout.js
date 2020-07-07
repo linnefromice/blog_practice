@@ -31,6 +31,11 @@ const GlobalHeader = styled.div`
   align-items: center;
   justify-content: center;
 `
+const Title = styled.div`
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+`
 const GlobalDrawer = styled.div`
   background-color: #8BFFAA;
   border-radius: 5px;
@@ -52,7 +57,7 @@ const Layout = ({ location, title, children }) => {
         {logoLetter}
       </GlobalLogo>
       <GlobalHeader>
-        <h3>{title}</h3>
+        <Title>{title}</Title>
       </GlobalHeader>
       <GlobalDrawer>
         <Sidebar/>
