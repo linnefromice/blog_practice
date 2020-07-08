@@ -29,9 +29,15 @@ const TagChips = ({tags}) => (
   <ChipArea>
     {tags.map((tag) => {
       return(
-        <Chip>
-          <small>{tag}</small>
-        </Chip>
+        <Link
+          style={{ boxShadow: `none` }}
+          to={`/`}
+          state={{ tag: `${tag}`}}
+        >
+            <Chip>
+              <small>{tag}</small>
+            </Chip>
+        </Link>
       )
     })}
   </ChipArea>
