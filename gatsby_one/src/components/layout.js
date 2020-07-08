@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Sidebar from "./sidebar"
 
 const RootContainer = styled.div`
+  background: linear-gradient(135deg, #A1FFCE 0%, #FAFFD1 100%);
   display: grid;
   width: 100vw;
   height: 100vh;
@@ -23,23 +24,28 @@ const LogoLetter = styled.span`
   color: #8BFFAA;
   font-weight: bold;
   text-align: center;
+  text-shadow: 4px 4px 4px gray;
 `
 const GlobalHeader = styled.div`
-  background-color: #8BFFAA;
+  background-color: white;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 4px 4px 4px gray;
 `
 const Title = styled.div`
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-shadow: 4px 4px 4px gray;
 `
 const GlobalDrawer = styled.div`
-  background-color: #8BFFAA;
+  background-color: white;
   border-radius: 5px;
   display: flex;
+  box-shadow: 4px 4px 4px gray;
 `
 const ContentArea = styled.div`
   overflow-y: scroll;
