@@ -16,6 +16,14 @@ const MenuChip = styled.div`
   padding: 0.1rem 0;
   margin: 0.5rem 5%;
   text-align: center;
+  box-shadow: 1px 1px 1px gray;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    box-shadow: none;
+    transform: translate(1px, 1px);
+  }
 `
 const TagChip = styled.div`
   border-radius: 25px;
@@ -23,6 +31,14 @@ const TagChip = styled.div`
   padding: 0.1rem 0;
   margin: 0.5rem 5%;
   text-align: center;
+  box-shadow: 1px 1px 1px gray;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    box-shadow: none;
+    transform: translate(1px, 1px);
+  }
 `
 
 const Sidebar = () => {
