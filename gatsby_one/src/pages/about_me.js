@@ -7,12 +7,41 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import styled from "styled-components"
+import TagCloud from "react-tag-cloud"
+
 const FlexContainer = styled.div`
   display: flex;
   align-items: center;
   align-content: center;
   flex-direction: column;
 `
+
+const SkillSetCloud = () => {
+  return (
+    <TagCloud
+      style={{
+        fontFamily: 'sans-serif',
+        fontSize: 30,
+        padding: 5,
+        height: "50vh",
+        width: "80%",
+      }}
+    >
+      <div style={{ color: 'green', fontSize: '20'}}>Flutter</div>
+      <div style={{ color: 'green', fontSize: '20'}}>Spring Boot</div>
+      <div style={{ color: 'lime', fontSize: '10'}}>React</div>
+      <div style={{ color: 'lime', fontSize: '10'}}>Nodejs</div>
+      <div style={{ color: 'lime', fontSize: '10'}}>Ruby</div>
+      <div style={{ color: 'lime', fontSize: '10'}}>HTML/CSS</div>
+      <div style={{ color: 'lime', fontSize: '10'}}>Docker</div>
+      <div style={{ color: 'lime', fontSize: '10'}}>Firebase</div>
+      <div style={{ color: 'palegreen', fontSize: '5'}}>Vue</div>
+      <div style={{ color: 'palegreen', fontSize: '5'}}>ReactNative</div>
+      <div style={{ color: 'palegreen', fontSize: '5'}}>Go</div>
+      <div style={{ color: 'palegreen', fontSize: '5'}}>Kotlin</div>
+    </TagCloud>
+  )
+}
 
 const AboutMe = ({ data, location }) => {
   const { title, author } = data.site.siteMetadata
@@ -34,8 +63,10 @@ const AboutMe = ({ data, location }) => {
             borderRadius: `50%`,
           }}
         />
-        <h4>{author.name}</h4>
-        <span>{author.summary}</span>
+        <div>
+          <span style={{ fontWeight: 'bold', fontSize: '1.5em' }}>{author.name}</span>{` `}<span>{author.summary}</span>
+        </div>
+        <SkillSetCloud/>
       </FlexContainer>
     </Layout>
   )
