@@ -10,7 +10,14 @@ const TitleContext = styled.div`
   font-weight: bold;
   margin: 0 5%;
 `
-const Chip = styled.div`
+const MenuChip = styled.div`
+  border-radius: 25px;
+  background-color: lime;
+  padding: 0.1rem 0;
+  margin: 0.5rem 5%;
+  text-align: center;
+`
+const TagChip = styled.div`
   border-radius: 25px;
   background-color: #b3ffb7;
   padding: 0.1rem 0;
@@ -39,7 +46,7 @@ const Sidebar = () => {
           style={{ boxShadow: `none`, textAlign: `center` }}
           to={`/about_me`}
         >
-          <div>About Me</div>
+          <MenuChip>About Me</MenuChip>
         </Link>
       </div>
       <div>
@@ -48,7 +55,7 @@ const Sidebar = () => {
           style={{ boxShadow: `none`, textAlign: `center` }}
           to={`/`}
         >
-          <div>ALL</div>
+          <MenuChip>ALL</MenuChip>
         </Link>
         {group.map((node) => {
           return (
@@ -57,7 +64,7 @@ const Sidebar = () => {
               to={`/`}
               state={{ tag: `${node.tag}`}}
             >
-              <Chip>{node.tag}</Chip>
+              <TagChip>{node.tag}</TagChip>
             </Link>
           )
         })}
