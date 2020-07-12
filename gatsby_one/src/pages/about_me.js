@@ -16,6 +16,36 @@ const FlexContainer = styled.div`
   flex-direction: column;
 `
 
+const MainContents = ({ data }) => {
+  const { title, author } = data.site.siteMetadata
+
+  return (
+    <FlexContainer>
+      <Image
+        fixed={data.avatar.childImageSharp.fixed}
+        alt={author.name}
+        style={{
+          marginRight: rhythm(1 / 2),
+          marginBottom: 0,
+          minWidth: 50,
+          borderRadius: `100%`,
+        }}
+        imgStyle={{
+          borderRadius: `50%`,
+        }}
+      />
+      <div>
+        <span style={{ fontWeight: 'bold', fontSize: '1.5em' }}>{author.name}</span>
+      </div>
+      <ul>
+        <li>{author.summary}</li>
+        <li>Experienced from leading in to O&M / from player to manager.</li>
+        <li>Also Experienced Mentor for 150 new graduates / Dev lead (having 30 members) New development of hybrid application & back system in leading</li>
+      </ul>
+    </FlexContainer>
+  )
+}
+
 const SkillSetCloud = () => {
   return (
     <TagCloud
@@ -40,7 +70,7 @@ const SkillSetCloud = () => {
       <div style={{ color: 'palegreen', fontSize: '5'}}>Go</div>
       <div style={{ color: 'palegreen', fontSize: '5'}}>Kotlin</div>
     </TagCloud>
-  )
+  ) 
 }
 
 const AboutMe = ({ data, location }) => {
@@ -50,22 +80,7 @@ const AboutMe = ({ data, location }) => {
     <Layout location={location} title={title}>
       <SEO title="About me" />
       <FlexContainer>
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author.name}
-          style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            minWidth: 50,
-            borderRadius: `100%`,
-          }}
-          imgStyle={{
-            borderRadius: `50%`,
-          }}
-        />
-        <div>
-          <span style={{ fontWeight: 'bold', fontSize: '1.5em' }}>{author.name}</span>{` `}<span>{author.summary}</span>
-        </div>
+        <MainContents data={data}/>
         <SkillSetCloud/>
       </FlexContainer>
     </Layout>
