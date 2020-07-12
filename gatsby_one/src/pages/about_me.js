@@ -38,9 +38,9 @@ const MainContents = ({ data }) => {
         <span style={{ fontWeight: 'bold', fontSize: '1.5em' }}>{author.name}</span>
       </div>
       <ul>
-        <li>{author.summary}</li>
-        <li>Experienced from leading in to O&M / from player to manager.</li>
-        <li>Also Experienced Mentor for 150 new graduates / Dev lead (having 30 members) New development of hybrid application & back system in leading</li>
+        <li style={{ fontSize: '0.75rem' }}>{author.summary}</li>
+        <li style={{ fontSize: '0.75rem' }}>Experienced from leading in to O&M / from player to manager.</li>
+        <li style={{ fontSize: '0.75rem' }}>Also Experienced Mentor for 150 new graduates / Dev lead (having 30 members) New development of hybrid application & back system in leading</li>
       </ul>
     </FlexContainer>
   )
@@ -50,25 +50,24 @@ const SkillSetCloud = () => {
   return (
     <TagCloud
       style={{
-        fontFamily: 'sans-serif',
-        fontSize: 30,
         padding: 5,
         height: "50vh",
         width: "80%",
       }}
+      rotate={() => Math.round(Math.random() * 1) * 90}
     >
-      <div style={{ color: 'green', fontSize: '20'}}>Flutter</div>
-      <div style={{ color: 'green', fontSize: '20'}}>Spring Boot</div>
-      <div style={{ color: 'lime', fontSize: '10'}}>React</div>
-      <div style={{ color: 'lime', fontSize: '10'}}>Nodejs</div>
-      <div style={{ color: 'lime', fontSize: '10'}}>Ruby</div>
-      <div style={{ color: 'lime', fontSize: '10'}}>HTML/CSS</div>
-      <div style={{ color: 'lime', fontSize: '10'}}>Docker</div>
-      <div style={{ color: 'lime', fontSize: '10'}}>Firebase</div>
-      <div style={{ color: 'palegreen', fontSize: '5'}}>Vue</div>
-      <div style={{ color: 'palegreen', fontSize: '5'}}>ReactNative</div>
-      <div style={{ color: 'palegreen', fontSize: '5'}}>Go</div>
-      <div style={{ color: 'palegreen', fontSize: '5'}}>Kotlin</div>
+      <div style={{ color: 'springgreen', fontSize: '10', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>Flutter</div>
+      <div style={{ color: 'springgreen', fontSize: '10', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>SpringBoot</div>
+      <div style={{ color: 'springgreen', fontSize: '10', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>React</div>
+      <div style={{ color: 'mediumspringgreen', fontSize: '5', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>Nodejs</div>
+      <div style={{ color: 'mediumspringgreen', fontSize: '5', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>Ruby</div>
+      <div style={{ color: 'mediumspringgreen', fontSize: '5', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>HTML/CSS</div>
+      <div style={{ color: 'mediumspringgreen', fontSize: '5', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>Docker</div>
+      <div style={{ color: 'mediumspringgreen', fontSize: '5', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>Firebase</div>
+      <div style={{ color: 'palegreen', fontSize: '3', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>Vue</div>
+      <div style={{ color: 'palegreen', fontSize: '3', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>ReactNative</div>
+      <div style={{ color: 'palegreen', fontSize: '3', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>Go</div>
+      <div style={{ color: 'palegreen', fontSize: '3', textShadow: '2px 2px 2px gray', fontFamily: 'Arial Black' }}>Kotlin</div>
     </TagCloud>
   ) 
 }
